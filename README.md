@@ -1,4 +1,4 @@
-### JSGo
+## JSGo
 
 The goal of this project is to develop an API which can be used to better understand the various operations needed for a competitive computer player.
 
@@ -6,7 +6,7 @@ The first phase will be implemented in JavaScript using a reduced board size (5x
 
 Phase three involves hosting the game and using real matches to further train the computer player.
 
-**Bit-boards:**
+#### Bit-boards:
   To increase search speed and reduce memory usage, the board will be represented by two bit-arrays, each storing the positions of all black or white stones respectively. It may be useful to keep a third bit-board of all available positions.
 
   Players can add a stone of their color to any legal position*.
@@ -19,7 +19,7 @@ Phase three involves hosting the game and using real matches to further train th
     - If a play would remove the last liberty of one or more of the current player's groups, reject the play (no suicide).
     - If a play would result in the same board state as the current player's previous turn, reject the play (no ko).
 
-**Game:**
+#### Game:
   The game should allow two players to compete.
 
   Considerations:
@@ -33,10 +33,11 @@ Phase three involves hosting the game and using real matches to further train th
     - Allow players to mark dead stones at end of game.
     - Allow players to correct territory estimates at end of game.
 
-**Search:**
+#### Search:
   The search should allow for efficient tree exploration in order to find a competitive move for the computer player.
 
   Considerations:
+  
     - Evaluate potential moves and choose the one most likely to result in a higher score for the current player.
     - Use pruning to reduce search space.
       - Alpha beta pruning / Null window search
@@ -48,7 +49,7 @@ Phase three involves hosting the game and using real matches to further train th
       - Bensons algorithm
     - Allow for easy integration of libraries of standard openings, joseki, etc.
 
-**Machine Learning:**
+#### Machine Learning:
   API design should be easy to modify in order to optimize for ML. For example, different search constraints should be easily toggled on and off. One of the chief concerns is speed of play and evaluation.
 
   Considerations:
