@@ -24,7 +24,7 @@ Phase three involves hosting the game and using real matches to further train th
   The game should allow two players to compete.
 
   **Considerations:**
-
+    - Render board state when there is at least one human player.
     - Allow for handicap and komi at game start.
     - Alternate current player, allowing for passes.
     - End game when both players pass consecutively.
