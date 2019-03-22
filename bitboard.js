@@ -12,11 +12,10 @@ class BitBoard {
   }
 
   check (idx) {
-    return ((this.board >> idx) & 1) > 0;
+    return (this.board >> idx & 1) > 0;
   }
 
-  printBin() {
-    // print the board state as a binary num
+  printBinary() {
     let idx = Math.floor(Math.log2(this.board));
     let result = [];
 
@@ -30,7 +29,7 @@ class BitBoard {
 
   printGrid() {
     const row = new Array(5);
-    
+
     for (let i = 0; i < 5; i++) {
 
       for (let j = 0; j < 5; j++) {

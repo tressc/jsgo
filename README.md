@@ -13,17 +13,25 @@ Phase three involves hosting the game and using real matches to further train th
 
   **Considerations:**
 
-    - Determine if a stone belongs to a group of connected stones.
-      - Union-find algorithm
-    - Count liberties for all groups (groups contain >= 1 stones).
-    - If a play removes the last liberty of one or more opponent groups, remove all stones belonging to those groups.
-    - If a play would remove the last liberty of one or more of the current player's groups, reject the play (no suicide).
-    - If a play would result in the same board state as the current player's previous turn, reject the play (no ko).
+    - Add stones at a given position.
+    - Remove stones at a given position.
+    - Check for presence of stone at a given position.
+    - Print board as grid (for debugging).
+    - Print board as binary string (for debugging).
 
 ### Game:
   The game should allow two players to compete.
 
   **Considerations:**
+
+    - Determine if a stone belongs to a group of connected stones.
+      - Union-find algorithm
+      - Bitwise parallel reduction
+    - Count liberties for all groups (groups contain >= 1 stones).
+    - If a play removes the last liberty of one or more opponent groups, remove all stones belonging to those groups.
+    - If a play would remove the last liberty of one or more of the current player's groups, reject the play (no suicide).
+    - If a play would result in the same board state as the current player's previous turn, reject the play (no ko).
+
     - Render board state when there is at least one human player.
     - Allow for handicap and komi at game start.
     - Alternate current player, allowing for passes.
@@ -41,6 +49,7 @@ Phase three involves hosting the game and using real matches to further train th
   **Considerations:**
 
     - Evaluate potential moves and choose the one most likely to result in a higher score for the current player.
+      -
     - Use pruning to reduce search space.
       - Alpha beta pruning / Null window search
     - Eliminate duplicate board states / overlapping subtrees.
@@ -58,3 +67,7 @@ Phase three involves hosting the game and using real matches to further train th
 
     - Design the training to deliver useful results.
     - Have a way of measuring performance.
+    - Create game records for each match:
+      - Hosted human vs. human games
+      - Hosted human vs. AI games
+      - AI vs. AI games
