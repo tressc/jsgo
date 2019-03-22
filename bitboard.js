@@ -15,15 +15,28 @@ class BitBoard {
     return ((this.board >> idx) & 1) > 0;
   }
 
-  print() {
-    let num = Math.floor(Math.log2(this.board));
+  printBin() {
+    // print the board state as a binary num
+    let idx = Math.floor(Math.log2(this.board));
     let result = [];
 
-    while (num > -1) {
-      result.push(((this.board >> num) & 1));
-      num--;
+    while (idx > -1) {
+      result.push(((this.board >> idx) & 1));
+      idx--;
     }
 
     console.log(result.join(''));
+  }
+
+  printGrid() {
+    const row = new Array(5);
+    
+    for (let i = 0; i < 5; i++) {
+
+      for (let j = 0; j < 5; j++) {
+        row[j] = (this.board >> (5 * i + j) & 1) ? '*' : '-';
+      }
+      console.log(row.join(' '));
+    }
   }
 }
